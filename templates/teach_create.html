@@ -1,0 +1,33 @@
+{% extends 'basic.html' %}
+{% block name %} {{ name }} {% endblock %}
+{% block navlist3 %} btn btn-outline-secondary {% endblock  %}
+{% block body %}
+
+<br>
+<hr>
+<br><br><br>
+<center>
+    <div class="container" style="width: 50%;font-size: 20px;">
+        <div class="card card-body">
+          <!-- Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger. -->
+          <form  action='/create' method ="POST">
+              {% csrf_token %}
+            <div class="form-group">
+              <label for="exampleInputEmail1">Course Name</label><br> 
+              <input type="text" name='coursename' class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Eg: Introduction To Programming" required>
+              <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+            </div><br>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Course Join Code</label><br> 
+              <input type="text" class="form-control" name='code' id="exampleInputPassword1" placeholder="4-digit code" required >
+            </div>
+            <br>
+            <button  id="hari" data-bs-toggle="collapse" data-bs-target="#collapseExample" type="submit" class="btn btn-primary">Create</button>
+          </form>
+        </div>
+      </div>
+</center>
+<hr>
+
+{% endblock  %}
+
